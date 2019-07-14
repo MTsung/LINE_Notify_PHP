@@ -9,6 +9,7 @@ https://notify-bot.line.me/doc/en/
 
 ## 使用方式
 ````php
+  include_once("class/lineNotify.class.php");
   $lineNotify = new lineNotify(CLIENT_ID,CLIENT_SECRET,CALLBACK_URL);
   
   //前往連動頁面取得$_GET["code"]
