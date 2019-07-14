@@ -5,7 +5,7 @@ include_once("config.php");
 try {
 	if($_POST){
 		$lineNotify->snedNotify($_SESSION["access_token"],$_POST);
-		$_SESSION["apiRateLimit"] = $lineNotify->apiRateLimit;
+		$_SESSION["apiRateLimit"] = $lineNotify->getApiRateLimit();
 		header("Location: ".$_SERVER["HTTP_REFERER"]);
 	}
 }catch(Exception $e){

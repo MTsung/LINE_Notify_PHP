@@ -20,8 +20,9 @@ https://notify-bot.line.me/doc/en/
   
   //使用token傳送訊息,不支援imageFile欄位(上傳圖片至line伺服器)
   $lineNotify->snedNotify($token,$data);
+  
   //取得調用API限制陣列
-  $lineNotify->apiRateLimit;
+  $lineNotify->getApiRateLimit();
     
   //解除連動
   $lineNotify->rmToken($token);

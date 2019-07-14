@@ -4,8 +4,7 @@ class lineNotify{
 	private $clientId;
 	private $clientSecret;
 	private $callback;
-
-	var $apiRateLimit;
+	private $apiRateLimit;
 
 	function __construct($clientId,$clientSecret,$callback){
 		$this->clientId = $clientId;
@@ -95,6 +94,13 @@ class lineNotify{
 		}
 		return true;
 		
+	}
+
+	/**
+	 * 取得調用API限制陣列
+	 */
+	function getApiRateLimit(){
+		return $this->apiRateLimit;
 	}
 
 	/**

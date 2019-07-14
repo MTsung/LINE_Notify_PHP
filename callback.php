@@ -12,7 +12,7 @@ if($_GET["error"]){
     	}
 		$_SESSION["access_token"] = $lineNotify->getToken($_GET["code"]); //暫時用session記
         $lineNotify->snedNotify($_SESSION["access_token"],["message" => "\n嗨"]);
-        $_SESSION["apiRateLimit"] = $lineNotify->apiRateLimit;
+        $_SESSION["apiRateLimit"] = $lineNotify->getApiRateLimit();
         header("Location: index.php");
     }catch(Exception $e){
         exit($e->getMessage());
