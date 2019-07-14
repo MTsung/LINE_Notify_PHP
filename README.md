@@ -1,6 +1,9 @@
 # LINE Notify 範例
 https://notify-bot.line.me/doc/en/
 
+### 伺服器環境
+* 建議 PHP >= 7.0
+
 ## 流程圖
 ![](https://raw.githubusercontent.com/MTsung/LINE_Notify_PHP/master/image/process%20chart.png)
 
@@ -29,3 +32,6 @@ https://notify-bot.line.me/doc/en/
 
 ### LINE接收畫面
 ![](https://raw.githubusercontent.com/MTsung/LINE_Notify_PHP/master/image/line.png)
+
+### License
+[MIT license](https://opensource.org/licenses/MIT)
