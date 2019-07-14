@@ -1,6 +1,8 @@
 # LINE Notify 範例
 https://notify-bot.line.me/doc/en/
 
+### CLIENT_ID、CLIENT_SECRET 申請位置
+https://notify-bot.line.me/my/services/new
 ### 伺服器環境
 * 建議 PHP >= 7.0
 
