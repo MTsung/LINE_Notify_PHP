@@ -1,7 +1,10 @@
 # LINE Notify 範例
 https://notify-bot.line.me/doc/en/
 
-## 提供函式
+## 流程圖
+![](https://raw.githubusercontent.com/MTsung/LINE_Notify_PHP/master/image/process%20chart.png)
+
+## 使用方式
 ````php
   $lineNotify = new lineNotify(CLIENT_ID,CLIENT_SECRET,CALLBACK_URL);
   
@@ -15,7 +18,6 @@ https://notify-bot.line.me/doc/en/
   $lineNotify->snedNotify($token,$data);
   //取得調用API限制陣列
   $lineNotify->apiRateLimit;
-  
     
   //解除連動
   $lineNotify->rmToken($token);
