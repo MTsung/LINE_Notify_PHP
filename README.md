@@ -20,7 +20,7 @@ https://notify-bot.line.me/my/services/new
   //使用剛剛的code取得token
   $lineNotify->getToken($code);
   
-  //使用token傳送訊息,不支援imageFile欄位(上傳圖片至line伺服器)
+  //傳送訊息
   $lineNotify->snedNotify($token,$data);
   
   //取得調用API限制陣列
@@ -29,6 +29,19 @@ https://notify-bot.line.me/my/services/new
   //解除連動
   $lineNotify->rmToken($token);
 ````
+
+## 訊息參數說明
+
+| 參數名稱              | 必填 | 類型      | 描述                                                                                                    |
+|----------------------|------|-----------|---------------------------------------------------------------------------------------------------------|
+| message              | Y    | String    | 最多 1000 個半/全形字元                                                                                 |
+| imageThumbnail       | N    | URL       | 最大尺寸為240×240px JPEG                                                                                |
+| imageFullsize        | N    | URL       | 最大尺寸為2048×2048px JPEG<br> imageFullsize 與 imageThumbnail 若有設定其中一個，另外一個參數將變為必填 |
+| imageFile            | N    | File Path | 圖片路徑                                                                                                |
+| stickerPackageId     | N    | Integer   | 貼圖包ID。[list](https://devdocs.line.me/files/sticker_list.pdf)                                               |
+| stickerId            | N    | Integer   | 貼圖ID                                                                                                  |
+| notificationDisabled | N    | Boolean   | 是否關閉用戶通知，預設false                                                                             |
+
 
 ## 範例畫面
 ### 發送畫面

@@ -22,8 +22,11 @@ class lineNotify{
 		$type = "POST";
 		$header = [
 			"Authorization:	Bearer ".$token,
-			"Content-Type: application/x-www-form-urlencoded"
+			"Content-Type: multipart/form-data"
 		];
+		if($data["imageFile"]){
+			$data["imageFile"] = curl_file_create($data["imageFile"]);
+		}
 
 		$response = $this->curl($url,$type,$data,[],$header);
 		$response = json_decode($response,true);
@@ -117,10 +120,17 @@ class lineNotify{
 		if(strtoupper($type) == "GET"){
 			$url = $url."?".http_build_query($data);
 		}else{//POST
-			$options = [
-				CURLOPT_POST => true,
-				CURLOPT_POSTFIELDS => http_build_query($data)
-			];
+			if(in_array("Content-Type: multipart/form-data", $header)){
+				$options = [
+					CURLOPT_POST => true,
+					CURLOPT_POSTFIELDS => $data
+				];
+			}else{
+				$options = [
+					CURLOPT_POST => true,
+					CURLOPT_POSTFIELDS => http_build_query($data)
+				];
+			}
 		}
 
 		$defaultOptions = [
