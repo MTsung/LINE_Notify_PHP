@@ -17,14 +17,25 @@ https://notify-bot.line.me/my/services/new
   //前往連動頁面取得$_GET["code"]
   $lineNotify->authorization();
   
+  $code = $_GET["code"];
+
   //使用剛剛的code取得token
-  $lineNotify->getToken($code);
+  $token = $lineNotify->getToken($code);
   
   //傳送訊息
+  $data = [
+    "message" => "\n130 kps | FC 40.44☆ Black + White (97.96%) 882,699 | osu!mania | 10k vibro\nhttps://youtu.be/OHBEDNisKnc",
+    "imageThumbnail" => "https://i.ytimg.com/vi/OHBEDNisKnc/hqdefault.jpg",
+    "imageFullsize" => "https://i.ytimg.com/vi/OHBEDNisKnc/maxresdefault.jpg",
+    "imageFile" => "image/index.png",
+    "stickerPackageId" => 1,
+    "stickerId" => 1,
+    "notificationDisabled" => false
+  ];
   $lineNotify->snedNotify($token,$data);
   
   //取得調用API限制陣列
-  $lineNotify->getApiRateLimit();
+  $apiRateLimit = $lineNotify->getApiRateLimit();
     
   //解除連動
   $lineNotify->rmToken($token);
@@ -34,13 +45,13 @@ https://notify-bot.line.me/my/services/new
 
 | 參數名稱              | 必填 | 類型      | 描述                                                                                                    |
 |----------------------|------|-----------|---------------------------------------------------------------------------------------------------------|
-| message              | Y    | String    | 最多 1000 個半/全形字元                                                                                 |
+| message              | Y    | String    | 最多 1000 個半/全形字元                                                                                   |
 | imageThumbnail       | N    | URL       | 最大尺寸為240×240px JPEG                                                                                |
-| imageFullsize        | N    | URL       | 最大尺寸為2048×2048px JPEG<br> imageFullsize 與 imageThumbnail 若有設定其中一個，另外一個參數將變為必填 |
-| imageFile            | N    | File Path | 圖片路徑                                                                                                |
-| stickerPackageId     | N    | Integer   | 貼圖包ID。[list](https://devdocs.line.me/files/sticker_list.pdf)                                               |
+| imageFullsize        | N    | URL       | 最大尺寸為2048×2048px JPEG<br> imageFullsize 與 imageThumbnail 若有設定其中一個，另外一個參數將變為必填     |
+| imageFile            | N    | File Path | 圖片路徑，該參數優先權比imageFullsize、imageThumbnail高                                                    |
+| stickerPackageId     | N    | Integer   | 貼圖包ID。[list](https://devdocs.line.me/files/sticker_list.pdf)                                         |
 | stickerId            | N    | Integer   | 貼圖ID                                                                                                  |
-| notificationDisabled | N    | Boolean   | 是否關閉用戶通知，預設false                                                                             |
+| notificationDisabled | N    | Boolean   | 是否關閉用戶通知，預設false                                                                               |
 
 
 ## 範例畫面
