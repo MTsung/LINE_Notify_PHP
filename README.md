@@ -45,7 +45,7 @@ https://notify-bot.line.me/my/services/new
 
 | 參數名稱              | 必填 | 類型      | 描述                                                                                                    |
 |----------------------|------|-----------|---------------------------------------------------------------------------------------------------------|
-| message              | Y    | String    | 最多 1000 個半/全形字元                                                                                   |
+| message              | Y    | String    | 最多 1000 個半/全形字元，多餘的系統會用...代替                                                                                  |
 | imageThumbnail       | N    | URL       | 最大尺寸為240×240px JPEG                                                                                |
 | imageFullsize        | N    | URL       | 最大尺寸為2048×2048px JPEG<br> imageFullsize 與 imageThumbnail 若有設定其中一個，另外一個參數將變為必填     |
 | imageFile            | N    | File Path | 圖片路徑，該參數優先權比imageFullsize、imageThumbnail高                                                    |
