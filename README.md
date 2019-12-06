@@ -1,7 +1,13 @@
 # LINE Notify 範例
 https://notify-bot.line.me/doc/en/
 
-### CLIENT_ID、CLIENT_SECRET 申請方式
+### 伺服器環境
+* 建議 PHP >= 7.0
+
+## 流程圖
+![](https://raw.githubusercontent.com/MTsung/LINE_Notify_PHP/master/image/process%20chart.png)
+
+### CLIENT_ID、CLIENT_SECRET 申請
 1. 到 https://notify-bot.line.me/my/services/new 填寫資料
 
 ![](https://raw.githubusercontent.com/MTsung/LINE_Notify_PHP/master/image/step1.png)
@@ -15,12 +21,6 @@ https://notify-bot.line.me/doc/en/
   define("CLIENT_SECRET","你的CLIENT_SECRET");
   define("CALLBACK_URL","你的callback.php網址");
 ```
-
-### 伺服器環境
-* 建議 PHP >= 7.0
-
-## 流程圖
-![](https://raw.githubusercontent.com/MTsung/LINE_Notify_PHP/master/image/process%20chart.png)
 
 ## 使用方式
 ````php
