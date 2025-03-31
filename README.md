@@ -1,6 +1,14 @@
 # LINE Notify 範例
 https://notify-bot.line.me/doc/en/
 
+# 2025/03/31 結束服務
+感謝 Notify Bot 帶給我們方便的通知服務 🙏🙏🙏 (2016/09 ~ 2025/03) 
+
+[LINE Notify結束服務公告
+](https://notify-bot.line.me/closing-announce)
+
+<hr>
+
 ### 伺服器環境
 * 建議 PHP >= 7.0
 
